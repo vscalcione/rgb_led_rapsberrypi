@@ -4,15 +4,19 @@ import random
 import datetime
 import telepot
 import RPi.GPIO as GPIO
+import os
 
 # LED
 def on(pin):
     GPIO.output(pin, GPIO.HIGH)
-    return
+    return "Led state: ON"
 
 def off(pin):
     GPIO.output(pin, GPIO.LOW)
-    return
+    return "Led state: OFF"
+
+def welcome():
+    return "Hi, Im a bot"
 
 # to use Raspeberry Pi board pin numbers
 GPIO.setmode(GPIO.BOARD)
@@ -27,12 +31,14 @@ def handle(message):
     command = message['text']
     print ('Input command is %s' % command)
 
+    if command == "/start":
+        bot.sendMessage(chat_id, welcome())
     if command == '/on':
         bot.sendMessage(chat_id, on(11))
     elif command == '/off':
         bot.sendMessage(chat_id, off(11))
 
-bot_token = '1235090250:AAFwq-3709QPv1qVAX_K_UGFFYRcYnm0oVg'
+bot_token = os.environ.get('BOT_TOKEN')
 bot = telepot.Bot(bot_token)
 bot.message_loop(handle)
 print ('I\'m listening')
