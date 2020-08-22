@@ -17,6 +17,7 @@ or in automated way by running the following script:
 ```bash
 $ ./start.sh
 ```
-
+## Raspberry Schema
 This is the Raspberry Schema for connecting the card itself to the GPIO with 2 connection's cables and a LED on board
+##
 ![schema](https://it.emcelettronica.com/wp-content/uploads/2017/03/telegram_bot_raspi_15.jpg)
