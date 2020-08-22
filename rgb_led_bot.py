@@ -5,6 +5,10 @@ import datetime
 import telepot
 import RPi.GPIO as GPIO
 import os
+import argparse
+
+parser = argparse.ArgumentParser(description='''RGB LED on Raspberry Pi 4''', epilog="""This is a Change Status LED's script in Python3""")
+args=parser.parse_args()
 
 # LED
 def on(pin):
