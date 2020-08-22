@@ -1,4 +1,4 @@
-# rgb_led_rapsberrypi
+# rgb_led_raspberrypi
 
 This is a script for on/off led on Raspberry Pi 4 4GB RAM
 
